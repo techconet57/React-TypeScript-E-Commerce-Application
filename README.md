@@ -21,7 +21,7 @@ Make sure you have the following installed on your machine:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Nisha0202/ecommerce-app.git
+   git clone https://github.com/techconet57/ecommerce-app.git
    cd ecommerce-app
    ```
 
