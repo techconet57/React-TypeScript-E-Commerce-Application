@@ -1,80 +1,175 @@
-# E-Commerce Product List Application
+# React TypeScript E-Commerce App With GitHub Actions
 
-## Project Overview
-This project is a Simple E-Commerce Product List Application built using **React**, **TypeScript**, and **RTK Query**. The application displays a list of products fetched from a mock API, supports infinite scrolling for dynamic loading of products, and allows users to search for specific items. Users can add products to their cart, with a cart summary(total items and total price) displayed at the top of the app. The cart data is persisted in the Redux state, ensuring that users retain their selections even after refreshing the page.
+A simple and responsive **E-Commerce Product List Application** built with **React, TypeScript, Redux Toolkit, RTK Query, Redux Persist, and Tailwind CSS**.
 
-## Functionalities 
-1. **Product Listing with Infinite Scroll**
-2. **Search Functionality**
-3. **Cart Management**
-4. **Responsive Design**
- 
+The project also includes an automated **CI/CD pipeline using GitHub Actions and a self-hosted runner** to build and validate the application whenever changes are pushed to the repository.
 
-## Getting Started
+## 🚀 Project Overview
 
-### Prerequisites
-Make sure you have the following installed on your machine:
-- Node.js (version 17 or higher)
-- npm (Node Package Manager)
+This project demonstrates a modern React application combined with a practical DevOps CI/CD workflow.
 
-## Installation
+The application provides product browsing and shopping cart functionality, while GitHub Actions automates the application build process using a self-hosted runner.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/techconet57/ecommerce-app.git
-   cd ecommerce-app
-   ```
+## ✨ Application Features
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+* **Product Listing** – Fetches and displays products from a mock API.
+* **Infinite Scrolling** – Dynamically loads additional products while scrolling.
+* **Search Functionality** – Allows users to search for products.
+* **Shopping Cart** – Add products and view total items and price.
+* **Persistent Cart** – Cart data is preserved using Redux Persist and browser local storage.
+* **Responsive Design** – Works across desktop, tablet, and mobile screen sizes.
 
+## 🔄 CI/CD Pipeline
 
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+The project uses **GitHub Actions** to automate the application's build process.
 
-Open your browser and navigate to http://localhost:3000.
+A **self-hosted GitHub Actions runner** is used to execute the workflow instead of a GitHub-hosted runner.
 
-## Project Structure
+### CI/CD Workflow
 
-The directory structure of the application is organized as follows:
-```
-/src
-  /app
-    └── store.ts
-  /components
-    ├── CartSummary.tsx
-    └── ProductList.tsx
-  /features
-    /cart
-      └── cartSlice.ts
-  /services
-    └── productApi.ts
-  /types
-    └── types.ts
-  ├── App.css
-  ├── App.tsx
-  └── main.tsx
+```text
+Developer
+    │
+    │ Push Changes
+    ▼
+GitHub Repository
+    │
+    ▼
+GitHub Actions
+    │
+    ▼
+Self-Hosted Runner
+    │
+    ├── Checkout Source Code
+    ├── Install Dependencies
+    └── Build Application
+    │
+    ▼
+Build Result
 ```
 
-## Key Architectural Choices
+This provides hands-on experience with:
 
-1. **React Functional Components**
-: Leveraged React's functional components and hooks for state and lifecycle management.
-2. **RTK Query**
-: Used for efficient data fetching and caching from the FakeStore API.
-3. **Redux Toolkit**
-: Simplified the process of managing global state, particularly for the shopping cart.
-4. **Redux Persist**
-: Integrated redux-persist to automatically save and rehydrate the shopping cart state in localStorage, ensuring that users' cart data is preserved even after refreshing the page.
-5. **TypeScript**
-: Ensured type safety across the application, reducing runtime errors and improving developer experience.
-6. **Tailwind CSS**
-: Utilized Tailwind CSS for styling, allowing for rapid design implementation with a utility-first approach that promotes responsive and adaptive UI.
+* Continuous Integration
+* GitHub Actions
+* Self-hosted runners
+* Automated application builds
+* Linux-based CI/CD environments
+* Git-based development workflows
+
+## 🏗️ Architecture
+
+```text
+                    GitHub Repository
+                           │
+                           ▼
+                    GitHub Actions
+                           │
+                           ▼
+                  Self-Hosted Runner
+                           │
+                           ▼
+                  React Application
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+         RTK Query                  Redux Toolkit
+              │                         │
+              ▼                         ▼
+          Mock API                 Shopping Cart
+                                        │
+                                        ▼
+                                 Redux Persist
+                                        │
+                                        ▼
+                                  Local Storage
+```
+
+## 🛠️ Technologies Used
+
+| Technology         | Purpose                       |
+| ------------------ | ----------------------------- |
+| React              | Frontend development          |
+| TypeScript         | Type-safe development         |
+| Redux Toolkit      | Global state management       |
+| RTK Query          | API fetching and caching      |
+| Redux Persist      | Persistent cart state         |
+| Tailwind CSS       | Responsive styling            |
+| Vite               | Development and build tooling |
+| GitHub Actions     | CI/CD automation              |
+| Self-Hosted Runner | CI/CD job execution           |
+
+## 📁 Project Structure
+
+```text
+react-typescript-ecommerce-app/
+│
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
+├── src/
+│   ├── app/
+│   │   └── store.ts
+│   │
+│   ├── components/
+│   │   ├── CartSummary.tsx
+│   │   └── ProductList.tsx
+│   │
+│   ├── features/
+│   │   └── cart/
+│   │       └── cartSlice.ts
+│   │
+│   ├── services/
+│   │   └── productApi.ts
+│   │
+│   ├── types/
+│   │   └── types.ts
+│   │
+│   ├── App.css
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+```
+
+## 🎯 DevOps Learning Objectives
+
+This project provides practical experience with:
+
+* Git and GitHub
+* GitHub Actions
+* CI/CD pipeline implementation
+* Self-hosted GitHub Actions runners
+* Automated React application builds
+* Node.js application environments
+* Repository-based automation
+
+## 🚀 Future Improvements
+
+The CI/CD pipeline can be extended with:
+
+* Automated testing
+* Docker containerization
+* Docker Compose
+* Docker image publishing
+* AWS EC2 deployment
+* Terraform infrastructure provisioning
+* Ansible configuration management
+* Nginx reverse proxy
+* HTTPS/SSL
+* Security scanning
+* Production deployment automation
+
+## 👨‍💻 Author
+
+**Shyam Raut**
+
+GitHub: `techconet57`
 
 
-
-For any questions or suggestions, feel free to open an issue on the repository or contact me at nishajabatunnessa@gmail.com.
+This project is created for **learning, practice, and DevOps portfolio purposes**.
