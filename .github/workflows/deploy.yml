@@ -15,6 +15,11 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
 
+      - name: Show project files
+        run: |
+          pwd
+          ls -la
+
       - name: Stop existing container
         run: |
           docker compose down || true
@@ -29,4 +34,5 @@ jobs:
 
       - name: Check running containers
         run: |
+          docker compose ps
           docker ps
