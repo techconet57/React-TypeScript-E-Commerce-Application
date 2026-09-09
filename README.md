@@ -106,7 +106,7 @@ react-typescript-ecommerce-app/
 │
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
+│       └── deploy.yml
 │
 ├── src/
 │   ├── app/
